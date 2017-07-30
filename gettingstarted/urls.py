@@ -12,7 +12,7 @@ import hello.views
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^waiterapp', hello.views.waiterapp, name='waiterapp'),
-    url(r'^transactionStatus', hello.views.transactionStatus, name='transactionStatus'),
+    url(r'^postTransactionStatus', hello.views.postTransactionStatus, name='postTransactionStatus'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
 ]

@@ -28,7 +28,7 @@ def waiterapp(request):
 
 @api_view(['POST'])
 @parser_classes((PlainTextParser,))
-def transactionStatus(request):
+def postTransactionStatus(request):
     if request.method == 'POST':
         print(request.data);
     
