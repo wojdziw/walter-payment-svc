@@ -6,7 +6,7 @@ class Greeting(models.Model):
     when = models.DateTimeField('date created', auto_now_add=True)
 
 class Transactionstatus(models.Model):
-    status = "OLD"
+    status = models.CharField(max_length=30)
 
 class PlainTextParser(BaseParser):
     """
