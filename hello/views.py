@@ -22,8 +22,8 @@ def index(request):
 
 
 def waiterapp(request):
-    latestStatus = Transactionstatus.objects.latest(when)
-    return HttpResponse(latestStatus)
+    latestStatus = Transactionstatus.objects.latest('when')
+    return HttpResponse(latestStatus.status)
     # return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://\'" />')
 
 @api_view(['POST'])
