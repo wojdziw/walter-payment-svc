@@ -22,8 +22,8 @@ def index(request):
 
 
 def waiterapp(request):
-    times = int(os.environ.get('TIMES',3))
-    return HttpResponse('Hello! ' * times)
+    latestStatus = Greeting.objects.all()
+    return HttpResponse(latestStatus)
     # return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://\'" />')
 
 @api_view(['POST'])
