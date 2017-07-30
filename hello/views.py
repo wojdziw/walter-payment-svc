@@ -12,7 +12,7 @@ def index(request):
 
 def waiterapp(request):
     times = int(os.environ.get('TIMES',3))
-    return HttpResponse('<meta http-equiv="refresh" content="0; URL='http://developers.payu.com/pl/restapi.html'" />')
+    return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'http://developers.payu.com/pl/restapi.html\'" />')
 
 
 def db(request):
