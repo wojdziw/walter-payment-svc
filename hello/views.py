@@ -13,7 +13,7 @@ from django.http import HttpResponse
 
 from rest_framework.response import Response
 
-from .models import Greeting, PlainTextParser, TransactionStatus
+from .models import Greeting, PlainTextParser, Transactionstatus
 
 # Create your views here.
 def index(request):
@@ -28,12 +28,12 @@ def waiterapp(request):
 
 @api_view(['POST'])
 @parser_classes((PlainTextParser,))
-def postTransactionStatus(request):
+def postTransactionstatus(request):
     if request.method == 'POST':
         print(request.data);
-        transactionStatus = TransactionStatus();
-        transactionStatus.status = request.data;
-        transactionStatus.save();
+        transactionstatus = Transactionstatus();
+        transactionstatus.status = request.data;
+        transactionstatus.save();
     
     return HttpResponse(status=200)
         

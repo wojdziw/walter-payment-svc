@@ -5,7 +5,7 @@ from rest_framework.parsers import BaseParser
 class Greeting(models.Model):
     when = models.DateTimeField('date created', auto_now_add=True)
 
-class TransactionStatus(models.Model):
+class Transactionstatus(models.Model):
     status = "OLD"
 
 class PlainTextParser(BaseParser):
