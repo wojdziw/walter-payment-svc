@@ -17,14 +17,14 @@ from .models import Greeting, PlainTextParser, Transactionstatus
 
 # Create your views here.
 def index(request):
-    times = int(os.environ.get('TIMES',3))
+    times = int(os.environ.get('TIMES', 3))
     return HttpResponse('Hello! ' * times)
 
 
 def waiterapp(request):
-    times = int(os.environ.get('TIMES',3))
-    return HttpResponse('Hello! ' * times)
-    # return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://\'" />')
+    times = int(os.environ.get('TIMES', 3))
+    #return HttpResponse('Hello! ' * times)
+    eturn HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Home\'" />')
 
 def getTransactionstatus(request):
     latestStatus = Transactionstatus.objects.latest('when')
