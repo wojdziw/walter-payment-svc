@@ -22,7 +22,7 @@ def index(request):
 
 
 def waiterapp(request):
-    latestStatus = Greeting.objects.all()
+    latestStatus = Transactionstatus.objects.latest(when)
     return HttpResponse(latestStatus)
     # return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://\'" />')
 
