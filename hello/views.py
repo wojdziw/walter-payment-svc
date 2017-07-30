@@ -10,6 +10,10 @@ def index(request):
     times = int(os.environ.get('TIMES',3))
     return HttpResponse('Hello! ' * times)
 
+def waiterapp(request):
+    times = int(os.environ.get('TIMES',3))
+    return HttpResponse('Hello! ' * times)
+
 
 def db(request):
 
