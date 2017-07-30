@@ -15,6 +15,10 @@ def waiterapp(request):
     return HttpResponse('Hello! ' * times)
     # return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://\'" />')
 
+def transactionStatus(request):
+    times = int(os.environ.get('TIMES',3))
+    return HttpResponse('Transaction status!')
+
 
 def db(request):
 
