@@ -26,6 +26,10 @@ def waiterapp(request):
     return HttpResponse(latestStatus.status)
     # return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://\'" />')
 
+def getTransactionstatus(request):
+    latestStatus = Transactionstatus.objects.latest('when')
+    return HttpResponse(latestStatus.status)
+
 @api_view(['POST'])
 @parser_classes((PlainTextParser,))
 def postTransactionstatus(request):
