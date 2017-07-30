@@ -24,7 +24,7 @@ def index(request):
 def waiterapp(request):
     times = int(os.environ.get('TIMES', 3))
     #return HttpResponse('Hello! ' * times)
-    eturn HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Home\'" />')
+    return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Home\'" />')
 
 def getTransactionstatus(request):
     latestStatus = Transactionstatus.objects.latest('when')
