@@ -9,7 +9,8 @@ from rest_framework.decorators import api_view
 from rest_framework.decorators import parser_classes
 
 
-from urllib2 import Request, urlopen
+from urllib.request import urlopen, Request
+
 
 from django.http import HttpResponse
 
