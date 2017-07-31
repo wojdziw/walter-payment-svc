@@ -20,7 +20,6 @@ def index(request):
     times = int(os.environ.get('TIMES', 3))
     return HttpResponse('Hello! ' * times)
 
-
 def waiterapp(request):
     times = int(os.environ.get('TIMES', 3))
     #return HttpResponse('Hello! ' * times)
@@ -31,13 +30,13 @@ def getTransactionstatus(request):
     return HttpResponse(latestStatus.status)
 
 @api_view(['POST'])
-@parser_classes((PlainTextParser,))
+@parser_classes((JSONParser,))
 def postTransactionstatus(request):
     if request.method == 'POST':
         print(request.data);
-        transactionstatus = Transactionstatus();
-        transactionstatus.status = request.data;
-        transactionstatus.save();
+        # transactionstatus = Transactionstatus();
+        # transactionstatus.status = request.data;
+        # transactionstatus.save();
     
     return HttpResponse(status=200)
         
