@@ -57,43 +57,36 @@ def getToken():
 
     return token
 
+@api_view(['POST'])
+@parser_classes((JSONParser,))
 def getPaymentUri(request):
 
+    price = request.data['price']
+
     token = getToken()
-
-    print(token)
-
     content = {
         "notifyUrl": "https://sheltered-plateau-48256.herokuapp.com/postTransactionstatus",
         "customerIp": "127.0.0.1",
         "merchantPosId": "301839",
         "description": "RTV market",
         "currencyCode": "PLN",
-        "totalAmount": "21000",
+        "totalAmount": price,
         "products": [
             {
-                "name": "Wireless mouse",
-                "unitPrice": "15000",
-                "quantity": "1"
-            },
-            {
-                "name": "HDMI cable",
-                "unitPrice": "6000",
+                "name": "Menu order",
+                "unitPrice": price,
                 "quantity": "1"
             }
         ]
     }
-    
 
     headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer ' + token
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
     }
 
     request = requests.post("https://secure.snd.payu.com/api/v2_1/orders/", json=content, headers=headers, allow_redirects=False)
     
-    print ("!!!!!!!!!!!!!!!!"+str(request.text))
-
     jdata = json.loads(request.text);
     uri = jdata['redirectUri'];
 
