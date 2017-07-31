@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from rest_framework.parsers import JSONParser
 import requests
 import os
+import json
 
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -79,7 +80,7 @@ def getPaymentUri(request):
     
     print ("!!!!!!!!!!!!!!!!"+str(request.text))
 
-    jdata = json.load(request.text);
+    jdata = json.loads(request.text);
     uri = jdata['redirectUri'];
 
     return HttpResponse(uri)
