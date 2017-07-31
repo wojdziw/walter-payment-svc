@@ -47,15 +47,15 @@ def postTransactionstatus(request):
 
 def getToken():
 
-    body = "grant_type=client_credentials&client_id=301839&client_secret=53abd5b4510abc11b6ddc8bed7241a0c";
+    body = "grant_type=client_credentials&client_id=301839&client_secret=53abd5b4510abc11b6ddc8bed7241a0c"
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
     }
     request = requests.post("https://secure.snd.payu.com/pl/standard/user/oauth/authorize", data=body, headers=headers)
     jdata = json.loads(request.text)
-    uri = jdata['access_token']
+    token = jdata['access_token']
 
-    return request.text
+    return token
 
 def getPaymentUri(request):
 
@@ -87,7 +87,7 @@ def getPaymentUri(request):
 
     headers = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer a05f69c4-109a-414c-acb1-bae1e9d7e46a'
+    'Authorization': 'Bearer ' + token
     }
 
     request = requests.post("https://secure.snd.payu.com/api/v2_1/orders/", json=content, headers=headers, allow_redirects=False)
