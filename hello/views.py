@@ -34,7 +34,7 @@ def getTransactionstatus(request):
 def postTransactionstatus(request):
     if request.method == 'POST':
         status = (request.data['order'])['status']
-        console.log("The transaction status received is: " + status)
+        print("The transaction status received is: " + status)
         transactionstatus = Transactionstatus();
         transactionstatus.status = status;
         transactionstatus.save();
