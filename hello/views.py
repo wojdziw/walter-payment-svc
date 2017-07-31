@@ -13,7 +13,7 @@ from django.http import HttpResponse
 
 from rest_framework.response import Response
 
-from .models import Greeting, PlainTextParser, Transactionstatus
+from .models import PlainTextParser, Transactionstatus
 
 # Create your views here.
 def index(request):
@@ -40,14 +40,3 @@ def postTransactionstatus(request):
         transactionstatus.save();
     
     return HttpResponse(status=200)
-        
-
-
-def db(request):
-
-    greeting = Greeting()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
-
-    return render(request, 'db.html', {'greetings': greetings})

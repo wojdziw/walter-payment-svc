@@ -1,10 +1,6 @@
 from django.db import models
 from rest_framework.parsers import BaseParser
 
-# Create your models here.
-class Greeting(models.Model):
-    when = models.DateTimeField('date created', auto_now_add=True)
-
 class Transactionstatus(models.Model):
     when = models.DateTimeField('date created', auto_now_add=True)
     status = models.CharField(max_length=30)
