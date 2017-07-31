@@ -49,9 +49,11 @@ def getToken():
 
     body = "grant_type=client_credentials&client_id=301839&client_secret=53abd5b4510abc11b6ddc8bed7241a0c";
     headers = {
-    'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/x-www-form-urlencoded',
     }
     request = requests.post("https://secure.snd.payu.com/pl/standard/user/oauth/authorize", data=body, headers=headers)
+    jdata = json.loads(request.text)
+    uri = jdata['access_token']
 
     return request.text
 
