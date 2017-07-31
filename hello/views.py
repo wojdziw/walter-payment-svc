@@ -33,7 +33,7 @@ def getTransactionstatus(request):
 @parser_classes((JSONParser,))
 def postTransactionstatus(request):
     if request.method == 'POST':
-        print(request.data);
+        print(request.data['order']);
         # transactionstatus = Transactionstatus();
         # transactionstatus.status = request.data;
         # transactionstatus.save();
