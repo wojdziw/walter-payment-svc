@@ -59,7 +59,7 @@ def getPaymentUri(request):
 
     token = getToken()
 
-    console.log(token)
+    print(token)
 
     content = {
         "notifyUrl": "https://sheltered-plateau-48256.herokuapp.com/postTransactionstatus",
