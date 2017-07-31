@@ -79,5 +79,5 @@ def getPaymentUri(request):
     
     print ("!!!!!!!!!!!!!!!!"+request.url)
 
-    return HttpResponse(request.text)
+    return HttpResponse('<meta http-equiv="refresh" content="0; URL="'+request.url+ '"/>')
 
