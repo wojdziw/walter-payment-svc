@@ -33,10 +33,9 @@ def getTransactionstatus(request):
 @parser_classes((JSONParser,))
 def postTransactionstatus(request):
     if request.method == 'POST':
-        print((request.data['order'])['status']);
-        # transactionstatus = Transactionstatus();
-        # transactionstatus.status = request.data;
-        # transactionstatus.save();
+        transactionstatus = Transactionstatus();
+        transactionstatus.status = (request.data['order'])['status'];
+        transactionstatus.save();
     
     return HttpResponse(status=200)
         

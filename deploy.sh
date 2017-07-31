@@ -1,3 +1,3 @@
 git add --all
 git commit -m "some changes"
-git push heroku master
+git push heroku masterd
