@@ -77,7 +77,7 @@ def getPaymentUri(request):
 
     request = Request('https://secure.payu.com/api/v2_1/orders/', data=values, headers=headers)
     response_body = urlopen(request).read()
-    print response_body
+    print (response_body)
 
     return HttpResponse(response_body)
 
