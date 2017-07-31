@@ -79,5 +79,8 @@ def getPaymentUri(request):
     
     print ("!!!!!!!!!!!!!!!!"+str(request.text))
 
-    return HttpResponse(request.text['redirectUri'])
+    json = json.load(request.text);
+    uri = json['redirectUri'];
+
+    return HttpResponse(uri)
 
