@@ -77,7 +77,7 @@ def getPaymentUri(request):
 
     request = requests.post("https://secure.snd.payu.com/api/v2_1/orders/", json=content, headers=headers)
     
-    print ("!!!!!!!!!!!!!!!!"+request.json())
+    print ("!!!!!!!!!!!!!!!!"+request.text)
 
     return HttpResponse(request.text)
 
