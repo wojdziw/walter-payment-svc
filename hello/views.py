@@ -9,6 +9,8 @@ from rest_framework.decorators import api_view
 from rest_framework.decorators import parser_classes
 
 
+from urllib2 import Request, urlopen
+
 from django.http import HttpResponse
 
 from rest_framework.response import Response
@@ -40,3 +42,42 @@ def postTransactionstatus(request):
         transactionstatus.save();
     
     return HttpResponse(status=200)
+
+
+
+def getPaymentUri(request):
+
+    values = """
+    {
+        "notifyUrl": "https://your.eshop.com/notify",
+        "customerIp": "127.0.0.1",
+        "merchantPosId": "145227",
+        "description": "RTV market",
+        "currencyCode": "PLN",
+        "totalAmount": "21000",
+        "products": [
+        {
+            "name": "Wireless mouse",
+            "unitPrice": "15000",
+            "quantity": "1"
+        },
+        {
+            "name": "HDMI cable",
+            "unitPrice": "6000",
+            "quantity": "1"
+        }
+        ]
+    }
+    """
+
+    headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ae03207a-b012-4745-95a0-78fb5bf40bda'
+    }
+
+    request = Request('https://secure.payu.com/api/v2_1/orders/', data=values, headers=headers)
+    response_body = urlopen(request).read()
+    print response_body
+
+    return HttpResponse(response_body)
+
