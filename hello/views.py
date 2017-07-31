@@ -49,9 +49,9 @@ def postTransactionstatus(request):
 def getPaymentUri(request):
 
     content = {
-        "notifyUrl": "https://your.eshop.com/notify",
+        "notifyUrl": "https://sheltered-plateau-48256.herokuapp.com/postTransactionstatus",
         "customerIp": "127.0.0.1",
-        "merchantPosId": "145227",
+        "merchantPosId": "301839",
         "description": "RTV market",
         "currencyCode": "PLN",
         "totalAmount": "21000",
@@ -75,7 +75,7 @@ def getPaymentUri(request):
     'Authorization': 'Bearer a05f69c4-109a-414c-acb1-bae1e9d7e46a'
     }
 
-    request = requests.post("https://secure.payu.com/api/v2_1/orders/", json=content, headers=headers)
+    request = requests.post("https://secure.snd.payu.com/api/v2_1/orders/", json=content, headers=headers)
     
     print (request.text)
 
