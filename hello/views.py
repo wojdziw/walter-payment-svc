@@ -48,8 +48,7 @@ def postTransactionstatus(request):
 
 def getPaymentUri(request):
 
-    values = 
-    {
+    values = {
         "notifyUrl": "https://your.eshop.com/notify",
         "customerIp": "127.0.0.1",
         "merchantPosId": "145227",
