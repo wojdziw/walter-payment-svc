@@ -79,5 +79,5 @@ def getPaymentUri(request):
     
     print (request.text)
 
-    return HttpResponse(response_body)
+    return HttpResponse(request.text)
 
