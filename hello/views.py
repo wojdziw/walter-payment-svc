@@ -48,7 +48,7 @@ def postTransactionstatus(request):
 
 def getPaymentUri(request):
 
-    values = {
+    content = {
         "notifyUrl": "https://your.eshop.com/notify",
         "customerIp": "127.0.0.1",
         "merchantPosId": "145227",
@@ -75,9 +75,9 @@ def getPaymentUri(request):
     'Authorization': 'Bearer ae03207a-b012-4745-95a0-78fb5bf40bda'
     }
 
-    request = Request('https://secure.payu.com/api/v2_1/orders/', data=values, headers=headers)
-    response_body = urlopen(request).read()
-    print (response_body)
+    request = requests.post("https://secure.payu.com/api/v2_1/orders/", json=content, headers=headers)
+    
+    print (request.text)
 
     return HttpResponse(response_body)
 
