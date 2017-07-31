@@ -61,7 +61,7 @@ def getToken():
 @parser_classes((JSONParser,))
 def getPaymentUri(request):
 
-    price = request.data['price']
+    totalAmount = request.data['totalAmount']
 
     token = getToken()
     content = {
@@ -70,11 +70,11 @@ def getPaymentUri(request):
         "merchantPosId": "301839",
         "description": "RTV market",
         "currencyCode": "PLN",
-        "totalAmount": price,
+        "totalAmount": totalAmount,
         "products": [
             {
                 "name": "Menu order",
-                "unitPrice": price,
+                "unitPrice": totalAmount,
                 "quantity": "1"
             }
         ]
