@@ -45,9 +45,21 @@ def postTransactionstatus(request):
     
     return HttpResponse(status=200)
 
+def getToken():
 
+    body = "grant_type=client_credentials&client_id=301839&client_secret=53abd5b4510abc11b6ddc8bed7241a0c";
+    headers = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    }
+    request = requests.post("https://secure.snd.payu.com/pl/standard/user/oauth/authorize", data=body, headers=headers)
+
+    return request.text
 
 def getPaymentUri(request):
+
+    token = getToken()
+
+    console.log(token)
 
     content = {
         "notifyUrl": "https://sheltered-plateau-48256.herokuapp.com/postTransactionstatus",
