@@ -66,6 +66,7 @@ def getPaymentUri(request):
     token = getToken()
     content = {
         "notifyUrl": "https://sheltered-plateau-48256.herokuapp.com/postTransactionstatus",
+        "continueUrl": "https://sheltered-plateau-48256.herokuapp.com/waiterapp"
         "customerIp": "127.0.0.1",
         "merchantPosId": "301839",
         "description": "RTV market",
