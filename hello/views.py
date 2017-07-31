@@ -56,16 +56,16 @@ def getPaymentUri(request):
         "currencyCode": "PLN",
         "totalAmount": "21000",
         "products": [
-        {
-            "name": "Wireless mouse",
-            "unitPrice": "15000",
-            "quantity": "1"
-        },
-        {
-            "name": "HDMI cable",
-            "unitPrice": "6000",
-            "quantity": "1"
-        }
+            {
+                "name": "Wireless mouse",
+                "unitPrice": "15000",
+                "quantity": "1"
+            },
+            {
+                "name": "HDMI cable",
+                "unitPrice": "6000",
+                "quantity": "1"
+            }
         ]
     }
     
