@@ -77,7 +77,7 @@ def getPaymentUri(request):
 
     request = requests.post("https://secure.snd.payu.com/api/v2_1/orders/", json=content, headers=headers)
     
-    print ("!!!!!!!!!!!!!!!!"+str(request.is_redirect))
+    print ("!!!!!!!!!!!!!!!!"+str(request.links))
 
     return HttpResponse(request.text)
 
