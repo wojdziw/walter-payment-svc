@@ -1,0 +1,62 @@
+[
+    {
+        "id": "f7b9632d-88c1-4b2d-afa0-e18396eb507f",
+        "name": "Salmon",
+        "price": 15.49,
+        "url": "https://www.landolakes.com/RecipeManagementSystem/media/Recipe-Media-Files/Recipes/Retail/DesktopImages/16193.jpg"
+    },
+    {
+        "id": "0b3c096a-3285-42f2-bef9-e91b62a81e44",
+        "name": "Steak",
+        "price": 25.99,
+        "url": "https://s-media-cache-ak0.pinimg.com/originals/a6/e7/8f/a6e78fbbae4fc248db47deb2fbf7c0f5.png"
+    },
+    {
+        "id": "ae3f0d54-bfc8-42dd-83e1-8df9a2fcdd1b",
+        "name": "Pizza",
+        "price": 20.99,
+        "url": "https://s-media-cache-ak0.pinimg.com/736x/c0/71/a6/c071a681fbbf7ef9275049afa89e4f40.jpg"
+    },
+    {
+        "id": "5aae3953-df5f-4e49-ba17-ee556d0d1a26",
+        "name": "Pancakes",
+        "price": 16.49,
+        "url": "https://s-media-cache-ak0.pinimg.com/originals/29/ac/d3/29acd3eabc04b9b14f1d0c2171828e94.jpg"
+    },
+    {
+        "id": "8e8665bc-fe19-421a-9baf-6b8ef1130c6f",
+        "name": "Cheesecake",
+        "price": 9.99,
+        "url": "https://s-media-cache-ak0.pinimg.com/736x/41/b8/3b/41b83b74e69f40a6a1675acfa8c6aab0.jpg"
+    },
+    {
+        "id": "91243637-a2bf-45ec-84fd-711d14ba364a",
+        "name": "Ice cream",
+        "price": 10.99,
+        "url": "https://www.browneyedbaker.com/wp-content/uploads/2013/05/vanilla-bean-ice-cream-23-250-300x300.jpg"
+    },
+    {
+        "id": "796d3c2b-2246-4f96-abb4-080201e21ac8",
+        "name": "Coke 200ml",
+        "price": 2.99,
+        "url": "https://img1.cgtrader.com/items/8915/4be8cb50ae/coke-coca-cola-bottles-and-glass-3d-model-max-obj-3ds-fbx.jpg"
+    },
+    {
+        "id": "e1239cca-01b0-44c4-8e8c-c8702ceaa982",
+        "name": "Coffee",
+        "price": 1.99,
+        "url": "https://kalkuluj.pl/useruploads/gallery/galeria_kalkulacji_cappuccino_klasyczne_po_wlosku/oryginal/cappuccino-klasyczne-po-wlosku-5_58ec8741d0f62.jpg"
+    },
+    {
+        "id": "7c104e4a-4451-4788-a504-31e0c7a5f0d3",
+        "name": "Tea",
+        "price": 0.99,
+        "url": "https://skinnymom.com/wp-content/uploads/2014/05/greentea-copy-400x400.jpg"
+    },
+    {
+        "id": "bbd5f4c5-f6eb-4478-ae7b-1d94bce5af5e",
+        "name": "Water 200ml",
+        "price": 0.99,
+        "url": "https://www.alleceny.pl/static/images/Aleceny_Model_Promotion_Table/big/snapshotimagehandler,ashxid=00626d47-2e72-358c-c04f-db9e028f3ee6_6ff81e656e5fc57d49b5c2cb1aba917d.jpg"
+    }
+]
