@@ -75,7 +75,7 @@ def getPaymentUri(request):
     }
 
     request = requests.post("https://secure.snd.payu.com/api/v2_1/orders/", json=content, headers=headers, allow_redirects=False)
-    
+
     jdata = json.loads(request.text);
     uri = jdata['redirectUri'];
 
@@ -84,5 +84,4 @@ def getPaymentUri(request):
 def getMenuPositions(request):
     os.path.join(os.path.dirname(os.path.dirname(__file__)),'menuPositions.json')
     with open('menuPositions.json') as json_data:
-        data = json.load(json_data)
-        return HttpResponse(data)
+        return HttpResponse(json_data)
