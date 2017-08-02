@@ -82,6 +82,7 @@ def getPaymentUri(request):
     return HttpResponse(uri)
 
 def getMenuPositions(request):
+    os.path.join(os.path.dirname(os.path.dirname(__file__)),'menuPositions.json')
     with open('menuPositions.json') as json_data:
         data = json.load(json_data)
         return HttpResponse(data)
