@@ -4,29 +4,20 @@ from rest_framework.parsers import JSONParser
 import requests
 import os
 import json
-
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.decorators import parser_classes
-
-
 from urllib.request import urlopen, Request
-
-
 from django.http import HttpResponse
-
 from rest_framework.response import Response
-
 from .models import PlainTextParser, Transactionstatus
 
-# Create your views here.
 def index(request):
     times = int(os.environ.get('TIMES', 3))
     return HttpResponse('Hello! ' * times)
 
 def waiterapp(request):
     times = int(os.environ.get('TIMES', 3))
-    #return HttpResponse('Hello! ' * times)
     return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Outcome\'" />')
 
 def getTransactionstatus(request):
@@ -46,7 +37,6 @@ def postTransactionstatus(request):
     return HttpResponse(status=200)
 
 def getToken():
-
     body = "grant_type=client_credentials&client_id=301839&client_secret=53abd5b4510abc11b6ddc8bed7241a0c"
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -60,9 +50,7 @@ def getToken():
 @api_view(['POST'])
 @parser_classes((JSONParser,))
 def getPaymentUri(request):
-
     totalAmount = request.data['totalAmount']
-
     token = getToken()
     content = {
         "notifyUrl": "http://sheltered-plateau-48256.herokuapp.com/postTransactionstatus",
@@ -93,3 +81,8 @@ def getPaymentUri(request):
 
     return HttpResponse(uri)
 
+def getMenuPositions(request) {
+    with open('../menuPositions.json') as json_data:
+        data = json.load(json_data)
+        return HttpResponse(data)
+}

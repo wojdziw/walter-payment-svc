@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^postTransactionstatus', hello.views.postTransactionstatus, name='postTransactionstatus'),
     url(r'^getTransactionstatus', hello.views.getTransactionstatus, name='getTransactionstatus'),
     url(r'^getPaymentUri', hello.views.getPaymentUri, name='getPaymentUri'),
+    url(r'^getMenuPositions', hello.views.getMenuPositions, name='getMenuPositions'),
     url(r'^admin/', include(admin.site.urls)),
 ]
