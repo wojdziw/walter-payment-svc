@@ -52,6 +52,7 @@ def getToken():
 def getPaymentUri(request):
     totalAmount = request.data['totalAmount']
     token = getToken()
+    print(token)
     content = {
         "notifyUrl": "http://sheltered-plateau-48256.herokuapp.com/postTransactionstatus",
         "continueUrl": "https://sheltered-plateau-48256.herokuapp.com/waiterapp",
