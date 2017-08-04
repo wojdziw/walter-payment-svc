@@ -67,7 +67,13 @@ def getPaymentUri(request):
                 "unitPrice": totalAmount,
                 "quantity": "1"
             }
-        ]
+        ],
+        "payMethods": {
+            "payMethod": {
+                "type": "PBL",
+                "value": "c"
+            }
+        }
     }
 
     headers = {
