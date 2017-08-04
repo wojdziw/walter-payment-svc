@@ -51,6 +51,7 @@ def getToken():
 @parser_classes((JSONParser,))
 def getPaymentUri(request):
     totalAmount = request.data['totalAmount']
+    id = request.data['id']
     token = getToken()
     print(token)
     content = {
@@ -63,7 +64,7 @@ def getPaymentUri(request):
         "totalAmount": totalAmount,
         "products": [
             {
-                "name": "Menu order",
+                "name": "Order id: " + id,
                 "unitPrice": totalAmount,
                 "quantity": "1"
             }
