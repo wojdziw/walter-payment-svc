@@ -86,6 +86,8 @@ def getPaymentUri(request):
     jdata = json.loads(request.text);
     uri = jdata['redirectUri'];
 
+    print(uri)
+
     return HttpResponse(uri)
 
 def getMenuPositions(request):
