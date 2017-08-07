@@ -26,7 +26,7 @@ def getTransactionstatus(request):
     if request.method == 'POST':
         id = (request.data['id'])
         latestStatus = Transactionstatus.objects.get(id=id)
-        if (latestStatus == null):
+        if (latestStatus is None):
             return HttpResponse("")
         return HttpResponse(latestStatus.status)
 
