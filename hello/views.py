@@ -10,6 +10,7 @@ from rest_framework.decorators import parser_classes
 from django.http import HttpResponse
 from rest_framework.response import Response
 from .models import PlainTextParser, Transactionstatus
+import datetime
 
 def index(request):
     times = int(os.environ.get('TIMES', 3))
@@ -36,6 +37,7 @@ def postTransactionstatus(request):
         transactionstatus = Transactionstatus()
         transactionstatus.status = status
         transactionstatus.id = id
+        transactionstatus.when = datetime.datetime.now()
         
         transactionstatus.save()
     
