@@ -20,7 +20,7 @@ def waiterapp(request):
     return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Outcome\'" />')
 
 def closeTab(request):
-    return HttpResponse('<html><You can now close this tab.</html>')
+    return HttpResponse('<html>You can now close this tab.</html>')
 
 @api_view(['POST'])
 @parser_classes((JSONParser,))
