@@ -30,6 +30,7 @@ def getTransactionstatus(request):
 @parser_classes((JSONParser,))
 def postTransactionstatus(request):
     if request.method == 'POST':
+        print (request.data)
         status = (request.data['order'])['status']
         id = (request.data['products'])[0]['name']
         print("The transaction status received is: " + status)
