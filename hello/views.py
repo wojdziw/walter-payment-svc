@@ -17,7 +17,7 @@ def index(request):
     return HttpResponse('Yello! ' * times)
 
 def waiterapp(request):
-    return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Outcome\'" />')
+    return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Outcome\'" /><html>You can now close this tab.</html>')
 
 def closeTab(request):
     return HttpResponse('<html>You can now close this tab.</html>')
