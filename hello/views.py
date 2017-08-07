@@ -7,7 +7,6 @@ import json
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.decorators import parser_classes
-from urllib.request import urlopen, Request
 from django.http import HttpResponse
 from rest_framework.response import Response
 from .models import PlainTextParser, Transactionstatus
