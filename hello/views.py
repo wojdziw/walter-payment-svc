@@ -29,10 +29,12 @@ def getTransactionstatus(request):
 def postTransactionstatus(request):
     if request.method == 'POST':
         status = (request.data['order'])['status']
+        id = (request.data['products'])[0]['name']
         print("The transaction status received is: " + status)
-        transactionstatus = Transactionstatus();
-        transactionstatus.status = status;
-        transactionstatus.save();
+        transactionstatus = Transactionstatus()
+        transactionstatus.status = status
+        transactionstatus.id = id
+        transactionstatus.save()
     
     return HttpResponse(status=200)
 
@@ -64,7 +66,7 @@ def getPaymentUri(request):
         "totalAmount": totalAmount,
         "products": [
             {
-                "name": "Order id: " + id,
+                "name": id,
                 "unitPrice": totalAmount,
                 "quantity": "1"
             }
