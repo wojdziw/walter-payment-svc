@@ -25,7 +25,7 @@ def waiterapp(request):
 def getTransactionstatus(request):
     if request.method == 'POST':
         id = (request.data['id'])
-        latestStatus = Transactionstatus.objects.get(id=id).latest('when')
+        latestStatus = Transactionstatus.objects.get(id=id)
         return HttpResponse(latestStatus.status)
 
 @api_view(['POST'])
