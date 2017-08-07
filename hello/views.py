@@ -19,9 +19,12 @@ def waiterapp(request):
     times = int(os.environ.get('TIMES', 3))
     return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Outcome\'" />')
 
+@api_view(['POST'])
+@parser_classes((JSONParser,))
 def getTransactionstatus(request):
-    latestStatus = Transactionstatus.objects.latest('when')
-    return HttpResponse(latestStatus.status)
+    if request.method == 'POST':
+        latestStatus = Transactionstatus.objects.latest('when')
+        return HttpResponse(latestStatus.status)
 
 @api_view(['POST'])
 @parser_classes((JSONParser,))
