@@ -36,8 +36,8 @@ def postTransactionstatus(request):
         transactionstatus = Transactionstatus()
         transactionstatus.status = status
         transactionstatus.id = id
-        if (status == "COMPLETED" or status == "CANCELED"):
-            transactionstatus.save()
+        
+        transactionstatus.save()
     
     return HttpResponse(status=200)
 
