@@ -26,6 +26,8 @@ def getTransactionstatus(request):
     if request.method == 'POST':
         id = (request.data['id'])
         latestStatus = Transactionstatus.objects.get(id=id)
+        if (latestStatus == null):
+            return HttpResponse("")
         return HttpResponse(latestStatus.status)
 
 @api_view(['POST'])
