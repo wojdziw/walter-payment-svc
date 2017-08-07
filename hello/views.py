@@ -17,7 +17,7 @@ def index(request):
     return HttpResponse('Yello! ' * times)
 
 def waiterapp(request):
-    return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Outcome\'" /><html>Please resume to the application.</html>')
+    return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Outcome\'" /><html style=" padding: 20px; font-size: 30px; font-family: 'arial'">Please resume to the application.</html>')
 
 @api_view(['POST'])
 @parser_classes((JSONParser,))
