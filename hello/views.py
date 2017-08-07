@@ -17,8 +17,10 @@ def index(request):
     return HttpResponse('Yello! ' * times)
 
 def waiterapp(request):
-    times = int(os.environ.get('TIMES', 3))
     return HttpResponse('<meta http-equiv="refresh" content="0; URL=\'waiterapp://Outcome\'" />')
+
+def closeTab(request):
+    return HttpResponse('<script>window.close();</script>')
 
 @api_view(['POST'])
 @parser_classes((JSONParser,))
@@ -69,7 +71,7 @@ def getPaymentUri(request):
         "continueUrl": "https://sheltered-plateau-48256.herokuapp.com/waiterapp",
         "customerIp": "127.0.0.1",
         "merchantPosId": "301839",
-        "description": "RTV market",
+        "description": "Menu order",
         "currencyCode": "PLN",
         "totalAmount": totalAmount,
         "products": [

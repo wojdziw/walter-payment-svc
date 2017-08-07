@@ -12,6 +12,7 @@ import hello.views
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^waiterapp', hello.views.waiterapp, name='waiterapp'),
+    url(r'^closeTab', hello.views.closeTab, name='closeTab'),
     url(r'^postTransactionstatus', hello.views.postTransactionstatus, name='postTransactionstatus'),
     url(r'^getTransactionstatus', hello.views.getTransactionstatus, name='getTransactionstatus'),
     url(r'^getPaymentUri', hello.views.getPaymentUri, name='getPaymentUri'),
