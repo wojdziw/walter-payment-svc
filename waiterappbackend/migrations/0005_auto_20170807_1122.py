@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('hello', '0004_delete_greeting'),
+        ('waiterappbackend', '0004_delete_greeting'),
     ]
 
     operations = [

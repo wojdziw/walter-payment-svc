@@ -9,7 +9,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('hello', '0002_transactionstatus'),
+        ('waiterappbackend', '0002_transactionstatus'),
     ]
 
     operations = [
