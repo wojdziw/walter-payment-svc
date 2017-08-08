@@ -9,7 +9,7 @@ from rest_framework.decorators import api_view
 from rest_framework.decorators import parser_classes
 from django.http import HttpResponse
 from rest_framework.response import Response
-from .models import PlainTextParser, Transactionstatus
+from .models import PlainTextParser, TransactionStatus
 import datetime
 
 def index(request):
@@ -21,22 +21,22 @@ def waiterapp(request):
 
 @api_view(['POST'])
 @parser_classes((JSONParser,))
-def getTransactionstatus(request):
+def getTransactionStatus(request):
     if request.method == 'POST':
         id = (request.data['id'])
-        latestStatus = Transactionstatus.objects.get(id=id)
+        latestStatus = TransactionStatus.objects.get(id=id)
         if (latestStatus is None):
             return HttpResponse("")
         return HttpResponse(latestStatus.status)
 
 @api_view(['POST'])
 @parser_classes((JSONParser,))
-def postTransactionstatus(request):
+def postTransactionStatus(request):
     if request.method == 'POST':
         status = (request.data['order'])['status']
         id = request.data['order']['products'][0]['name']
         print("The transaction status received is: " + status)
-        transactionstatus = Transactionstatus()
+        transactionstatus = TransactionStatus()
         transactionstatus.status = status
         transactionstatus.id = id
         transactionstatus.when = datetime.datetime.now()
@@ -64,7 +64,7 @@ def getPaymentUri(request):
     token = getToken()
     print(token)
     content = {
-        "notifyUrl": "http://sheltered-plateau-48256.herokuapp.com/postTransactionstatus",
+        "notifyUrl": "http://sheltered-plateau-48256.herokuapp.com/postTransactionStatus",
         "continueUrl": "https://sheltered-plateau-48256.herokuapp.com/waiterapp",
         "customerIp": "127.0.0.1",
         "merchantPosId": "301839",
