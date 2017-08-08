@@ -59,19 +59,7 @@ def getToken():
 @api_view(['POST'])
 @parser_classes((JSONParser,))
 def getPaymentUri(request):
-    # PUT PAYU SPECIFICS HERE
-    client_id = ""
-    client_secret = ""
-    merchantPosId = ""
-
-    os.path.join(os.path.dirname(os.path.dirname(__file__)),'payuCredentials.json')
-    with open('payuCredentials.json') as json_data:
-        client_id = json_data['client_id']
-        client_secret = json_data['client_secret']
-        merchantPosId = json_data['merchantPosId']
-
-    print ("LOLOLOLO " + client_id + " " + client_secret + " " + merchantPosId)
-
+    # PUT PAYU SPECIFICS JSON HERE
 
     totalAmount = request.data['totalAmount']
     id = request.data['id']
