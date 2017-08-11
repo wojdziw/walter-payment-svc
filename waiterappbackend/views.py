@@ -19,8 +19,6 @@ def index(request):
 def waiterapp(request):
     return HttpResponse('<html style=" padding: 40px; font-size: 80px; font-family: \'arial\'">You can now close this tab.</html>')
 
-@api_view(['POST'])
-@parser_classes((JSONParser,))
 def getTransactionStatus(request):
     id = message = request.GET.get('id')
     latestStatus = TransactionStatus.objects.get(id=id)
