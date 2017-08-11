@@ -53,8 +53,6 @@ def getToken():
 
     return token
 
-@api_view(['POST'])
-@parser_classes((JSONParser,))
 def getPaymentUri(request):
     # PUT PAYU SPECIFICS JSON HERE
     totalAmount = request.GET.get('totalAmount')
