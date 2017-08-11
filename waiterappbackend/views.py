@@ -20,7 +20,7 @@ def waiterapp(request):
     return HttpResponse('<html style=" padding: 40px; font-size: 80px; font-family: \'arial\'">You can now close this tab.</html>')
 
 def getTransactionStatus(request):
-    id = message = request.GET.get('id')
+    id = request.GET.get('id')
     latestStatus = TransactionStatus.objects.get(id=id)
     if (latestStatus is None):
         return HttpResponse("")
@@ -57,9 +57,8 @@ def getToken():
 @parser_classes((JSONParser,))
 def getPaymentUri(request):
     # PUT PAYU SPECIFICS JSON HERE
-
-    totalAmount = request.data['totalAmount']
-    id = request.data['id']
+    totalAmount = request.GET.get('totalAmount')
+    id = request.GET.get('id')
     token = getToken()
     print(token)
     content = {
