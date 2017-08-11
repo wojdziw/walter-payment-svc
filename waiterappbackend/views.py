@@ -22,12 +22,11 @@ def waiterapp(request):
 @api_view(['POST'])
 @parser_classes((JSONParser,))
 def getTransactionStatus(request):
-    if request.method == 'POST':
-        id = (request.data['id'])
-        latestStatus = TransactionStatus.objects.get(id=id)
-        if (latestStatus is None):
-            return HttpResponse("")
-        return HttpResponse(latestStatus.status)
+    id = message = request.GET.get('id')
+    latestStatus = TransactionStatus.objects.get(id=id)
+    if (latestStatus is None):
+        return HttpResponse("")
+    return HttpResponse(latestStatus.status)
 
 @api_view(['POST'])
 @parser_classes((JSONParser,))
