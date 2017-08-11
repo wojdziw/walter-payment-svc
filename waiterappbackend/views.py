@@ -19,15 +19,12 @@ def index(request):
 def waiterapp(request):
     return HttpResponse('<html style=" padding: 40px; font-size: 80px; font-family: \'arial\'">You can now close this tab.</html>')
 
-@api_view(['POST'])
-@parser_classes((JSONParser,))
 def getTransactionStatus(request):
-    if request.method == 'POST':
-        id = (request.data['id'])
-        latestStatus = TransactionStatus.objects.get(id=id)
-        if (latestStatus is None):
-            return HttpResponse("")
-        return HttpResponse(latestStatus.status)
+    id = request.GET.get('id')
+    latestStatus = TransactionStatus.objects.get(id=id)
+    if (latestStatus is None):
+        return HttpResponse("")
+    return HttpResponse(latestStatus.status)
 
 @api_view(['POST'])
 @parser_classes((JSONParser,))
@@ -56,13 +53,10 @@ def getToken():
 
     return token
 
-@api_view(['POST'])
-@parser_classes((JSONParser,))
 def getPaymentUri(request):
     # PUT PAYU SPECIFICS JSON HERE
-
-    totalAmount = request.data['totalAmount']
-    id = request.data['id']
+    totalAmount = request.GET.get('totalAmount')
+    id = request.GET.get('id')
     token = getToken()
     print(token)
     content = {
