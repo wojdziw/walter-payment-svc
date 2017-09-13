@@ -30,6 +30,7 @@ def getTransactionStatus(request):
 @parser_classes((JSONParser,))
 def postTransactionStatus(request):
     if request.method == 'POST':
+        print(request.data)
         status = (request.data['order'])['status']
         id = request.data['order']['products'][0]['name']
         print("The transaction status received is: " + status)
@@ -37,9 +38,9 @@ def postTransactionStatus(request):
         transactionstatus.status = status
         transactionstatus.id = id
         transactionstatus.when = datetime.datetime.now()
-        
+
         transactionstatus.save()
-    
+
     return HttpResponse(status=200)
 
 def getToken():
