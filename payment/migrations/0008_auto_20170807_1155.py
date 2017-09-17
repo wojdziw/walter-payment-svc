@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('waiterappbackend', '0007_auto_20170807_1148'),
+        ('payment', '0007_auto_20170807_1148'),
     ]
 
     operations = [
