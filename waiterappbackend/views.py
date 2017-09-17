@@ -16,8 +16,8 @@ def index(request):
     times = int(os.environ.get('TIMES', 3))
     return HttpResponse('Yello! ' * times)
 
-def waiterapp(request):
-    return HttpResponse('<html style=" padding: 40px; font-size: 80px; font-family: \'arial\'">You can now close this tab.</html>')
+def payment(request):
+    return HttpResponse('<html style=" padding: 40px; font-size: 40px; font-family: \'arial\'">You can now close this tab.</html>')
 
 def getTransactionStatus(request):
     id = request.GET.get('id')
@@ -62,7 +62,7 @@ def getPaymentUri(request):
     print(token)
     content = {
         "notifyUrl": "http://sheltered-plateau-48256.herokuapp.com/postTransactionStatus",
-        "continueUrl": "https://sheltered-plateau-48256.herokuapp.com/waiterapp",
+        "continueUrl": "https://sheltered-plateau-48256.herokuapp.com/payment",
         "customerIp": "127.0.0.1",
         "merchantPosId": "301839",
         "description": "Menu order",
