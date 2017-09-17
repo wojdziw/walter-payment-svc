@@ -1,5 +1,5 @@
 """
-Django settings for waiterappbackend project, on Heroku. For more info, see:
+Django settings for payment project, on Heroku. For more info, see:
 https://github.com/heroku/heroku-django-template
 
 For more information on this file, see
@@ -27,7 +27,7 @@ SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEST_RUNNER = 'waiterappbackend.heroku_test_runner.HerokuDiscoverRunner'
+TEST_RUNNER = 'payment.heroku_test_runner.HerokuDiscoverRunner'
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'waiterappbackend',
+    'payment',
     'corsheaders'
 )
 
@@ -56,7 +56,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
 )
 
-ROOT_URLCONF = 'waiterappbackend.urls'
+ROOT_URLCONF = 'payment.urls'
 
 TEMPLATES = [
     {
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'waiterappbackend.wsgi.application'
+WSGI_APPLICATION = 'payment.wsgi.application'
 
 
 # Database
@@ -142,4 +142,4 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-CORS_ORIGIN_ALLOW_ALL = True   
+CORS_ORIGIN_ALLOW_ALL = True
