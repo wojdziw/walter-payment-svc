@@ -1,6 +1,6 @@
 {
-  "name": "Waiter app backend",
-  "description": "Backend",
+  "name": "walter-payment-svc",
+  "description": "payment microservice",
   "image": "heroku/python",
   "repository": "",
   "keywords": ["python", "django" ],
